@@ -10,6 +10,7 @@
     "source": "functions"
   },
   "hosting": {
+    "appAssociation": "AUTO",
     "rewrites": [
       {
         "source": "/server/**",
