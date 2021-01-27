@@ -1,0 +1,12 @@
+<h1>{{ name }}</h1>
+<h6>{{ age }}</h6>
+{{# if condition }}
+condition met
+{{ else }}
+condition not met
+{{/if}}
+
+{{# each arrayN as |val key|}}
+    <h3>{{ val }}:</h3>
+    <h4>{{ key }}</h4>
+{{/each}}

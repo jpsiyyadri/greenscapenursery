@@ -1,0 +1,12 @@
+{
+    "artifact_id": "1",
+    "attributes": {
+        "attr_1": {
+            "name": "name of the attr",
+            "reg_ex": "$[]/",
+            "rules": {
+                "id": "what?"
+            }
+        }
+    }
+}

@@ -10,16 +10,22 @@ const app = express()
 const app2 = express()
 
 app2.use(cors);
-app2.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'default_layout', layoutsDir: path.join(__dirname, 'src/layouts')}))
+app2.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'theme', layoutsDir: path.join(__dirname, 'src/layouts')}))
+// app2.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'default_layout', layoutsDir: path.join(__dirname, 'src/layouts')}))
 app2.set('views', path.join(__dirname, "src/views"))
 app2.set('view engine', 'hbs')
 
-app2.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')))
+app2.use('/images', express.static(path.join(__dirname, 'assets/img')))
+app2.use('/css', express.static(path.join(__dirname, 'src/stylesheets')))
 // app2.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
 // app2.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
 
 app2.get('/login', (req, res) => {
   res.render('login')
+})
+
+app2.get('/home', (req, res) => {
+  res.render('home', {'title': 'console', 'name': 'jp', 'age': '25', 'condition': true, 'arrayN': [1,2,3]})
 })
 
 app2.get('/', (req, res) => {
